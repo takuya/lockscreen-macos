@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-int main(int argc, const char * argv[]) {
+int main() {
   @autoreleasepool {
 
     NSBundle *bnd = [NSBundle bundleWithPath:@"/Applications/Utilities/Keychain Access.app/Contents/Resources/Keychain.menu"];
@@ -16,7 +16,7 @@ int main(int argc, const char * argv[]) {
     Class pc = [bnd principalClass];
     id k = [[pc alloc]init];
 
-    [k performSelector:@selector(_lockScreenMenuHit) withObject:NULL];
+    [k performSelector:@selector(_lockScreenMenuHit:) withObject:NULL];
   }
   return 0;
 }
